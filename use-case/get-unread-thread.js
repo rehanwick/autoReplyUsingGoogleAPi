@@ -1,3 +1,6 @@
+const { google } = require('googleapis');
+const gmail = google.gmail('v1');
+
 async function getUnreadThreads() {
     const response = await gmail.users.threads.list({
       auth: auth,
@@ -9,3 +12,6 @@ async function getUnreadThreads() {
   
     return threads;
   }
+
+
+  module.exports = {getUnreadThreads} ; 

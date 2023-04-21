@@ -1,4 +1,7 @@
 const {replyToEmail} = require('./reply-to-email')
+const { google } = require('googleapis');
+const gmail = google.gmail('v1');
+
 
 async function replyToThread(threadId, message) {
     const response = await gmail.users.threads.get({
